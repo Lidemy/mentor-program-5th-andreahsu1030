@@ -19,3 +19,9 @@
 14. 上傳完成後到 `file changed` 再檢查一次 final version，確認自己發的是不是跟自己想的依樣
 15.  回到 Lidemy system 按下 `交作業` 並輸入連結
 16. 確認連結內容，若無問題即代表完成了
+
+## 等作業改完並且 merge 以後：
+
+1. 切換到 master：`git checkout master`
+2. 把最新的改動拉下來：`git pull origin master`
+3. 刪除已經 merge 的 branch：`git branch -d hw1`

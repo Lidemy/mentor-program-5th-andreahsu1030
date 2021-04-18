@@ -4,7 +4,7 @@
 CLI指令大致上都是這樣的形式，後面的參數可填可不填
 
 ```jsx
-**$ command [-options] parameter1 parameter2**
+ ** $ command [-options] parameter1 parameter2 **
     指令    [選項]     參數(1)    參數(2)
 ```
 
@@ -37,7 +37,9 @@ CLI指令大致上都是這樣的形式，後面的參數可填可不填
 
     `ls -al` 詳細檔案
 
-- `man` 說明書，如果想查詢某指令可以怎麼使用或搭配什麼參數 就輸入 man -(command)
+- `man` 
+
+    說明書，如果想查詢某指令可以怎麼使用或搭配什麼參數 就輸入 man -(command)
 
 ### 實際操作
 
