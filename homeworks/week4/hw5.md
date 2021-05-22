@@ -13,10 +13,10 @@ api 長得就像一串網址，而他的作用簡而言之就是可以用來傳�
 
 Base URL: https://lekkerrestaurantslist.com
 
-說明 | Method	| Path	| 參數	| 範例
-----|---------|-------|------|-----
-回傳所有餐廳資料	| GET	| /restaurants	| _limit:限制回傳資料數量	| /restaurants?_limit=10
-回傳單一餐廳資料 | GET	| /restaurants/:id	| None	| /restaurants/5
-刪除餐廳資料 |	DELETE	| /restaurants/:id	| None	| None
-新增餐廳資料 |	POST	| /restaurants	| name: 餐廳名	| None
-更改餐廳資料 |	PATCH	| /restaurants/:id	| name: 餐廳名	| None
+| 說明            | Method	| Path	              | 參數	               | 範例                   |
+| -------------- | ------- | ------------------- | -------------------- | --------------------- |
+| 回傳所有餐廳資料	| GET	    | /restaurants	     | _limit:限制回傳資料數量 | /restaurants?_limit=10 |
+| 回傳單一餐廳資料  | GET	    | /restaurants/:id	 | None	                | /restaurants/5         |
+| 刪除餐廳資料      |	DELETE  | /restaurants/:id	| None	               | None                   |
+| 新增餐廳資料      |	POST	  | /restaurants	    | name: 餐廳名	        | None                   |
+| 更改餐廳資料      |	PATCH	  | /restaurants/:id	| name: 餐廳名	        | None                   |
