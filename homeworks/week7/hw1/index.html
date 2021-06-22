@@ -226,9 +226,18 @@ footer {
             element.classList.add('hide__error')
           }
         }
-        if (!hasError){
-          alert(JSON.stringify(values))
-        }
+
+
+          if (!hasError){
+            alert(`
+              暱稱：${values.nickname}
+              電子郵件：${values.mail}
+              手機號碼：${values.phone}
+              報名類型：${values.type}
+              怎麼知道這活動的：${values.media}
+            `)
+          }
+
 
      })
 
