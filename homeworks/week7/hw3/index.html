@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <meta name​="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+
+  .add-list {
+    margin-top: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f0dea8;
+    border: 2px solid grey;
+  }
+  .btn-add {
+    padding: 2px 6px;
+    margin: 0 2px;
+    color: #a47f2d;
+  }
+  input[type=text] {
+    width: 280px;
+    height: 22px;
+    margin: 6px 4px;
+  }
+  input[type=button] {
+    height: 26px;
+    width: 55px;
+  }
+  .todo-list__block {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .todo-list__block:hover{
+    background: #cda54c;
+  }
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-del {
+    padding: 2px 6px;
+    margin: 0 2px;
+    color: #a47f2d;
+  }
+  .done .todo-list__content {
+    text-decoration: line-through;
+  }
+ 
+
+</style>
+<body>
+  <div class="add-list">
+    <input type="text" name="typing" placeholder="Type somthing ...">
+    <input class="btn-add" type="submit" value="Add" >
+    
+
+
+
+  </div>
+
+  <script>
+    // submit 偵測 add-btn是否被點擊
+    document.querySelector('.add-list').addEventListener('click', function(){
+      const newEvent = document.querySelector('input[type=text]').value
+      if (!newEvent) return
+      const div = document.createElement('div')
+      div.classList.add('todo-list__block')
+      
+      div.innerHTML = `
+      <div class="todo-list__content"><input type="checkbox" class="todo-list__check">  ${escapeHtml(newEvent)}</div>
+      <div><button class="btn-del">Delete</button></div>
+      `
+      document.querySelector('.add-list').appendChild(div)
+      document.querySelector('input[type=text]').value = ''
+    })
+    // 使用此函式避免當輸入的文字與html標籤相仿時發生錯誤
+      function escapeHtml(unsafe) {
+          return unsafe
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#039;");
+      }
+    // click  偵測 btn-del 是否被點擊，並且刪除該筆資料
+    document.querySelector('.add-list').addEventListener('click', function(event) {
+      const { target } = event
+      //delete todo
+      if (target.classList.contains('btn-del')) {
+        target.parentNode.parentNode.remove()
+        return
+      }
+
+    // check/uncheck todo
+    if (target.classList.contains('todo-list__check')) {
+      if (target.checked) {
+        target.parentNode.parentNode.classList.add('done')
+      } else {
+        target.parentNode.parentNode.classList.remove('done')
+      }
+    }
+  })
+
+    //過於繁瑣的程式碼
+    // document.querySelector('.add-list').addEventListener('click', function(e){
+    //   const element = document.querySelector('.todo-list__block')
+    //   const delBtn = e.target.closest('.btn-del')
+    //   if(delBtn) {
+    //     element.removeChild(document.querySelector('.todo-list__content'))
+    //     element.removeChild(document.querySelector('button'))
+    //     element.classList.remove('todo-list__block')
+    //   }
+    // })
+
+
+  </script>
+
+</body>
+</html>
