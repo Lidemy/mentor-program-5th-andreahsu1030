@@ -12,7 +12,8 @@
 範例： `<script scr="...某個不同源 url"></script>`
 ## 要如何存取跨網域的 API？
 
-sever 端必須在 header 加上 `access-control-allow-origin:*` 表示任何網域都可以接受請求
+sever 端必須在 header 加上 `access-control-allow-origin:*` 表示任何網域都可以接受請求。
+
 參考資料：https://medium.com/@a663321765/web-%E7%AD%86%E8%A8%98-%E5%88%9D%E6%8E%A2%E8%B7%A8%E4%BE%86%E6%BA%90%E8%B3%87%E6%BA%90%E5%85%B1%E7%94%A8-cors-129e88dbca87
 ## 為什麼我們在第四週時沒碰到跨網域的問題，這週卻碰到了？
 
