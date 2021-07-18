@@ -19,8 +19,7 @@ logout.php 登出 -->
     
 
     
-    // $user = getUserFromToken($_COOKIE['token']);
-    //$username = $user['nickname'];
+    $user = getUserFromUsername($username);
   }
 
   // if(!empty($_COOKIE['token'])) {
@@ -58,7 +57,7 @@ logout.php 登出 -->
     </div>
   <?php } else { ?>
     <a class="board__btn" href="logout.php">登出</a>
-    <h3>你好！<?php echo $username; ?></h3>
+    <h3>你好！<?php echo $user['nickname']; ?></h3>
   <?php } ?>
     <h1>comments</h1>
     <?php
