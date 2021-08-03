@@ -1,4 +1,4 @@
-/* eslint-disable */ 
+/* eslint-disable */
 function escape(toOutput) {
   return toOutput.replace(/\&/g, '&amp;')
     .replace(/\</g, '&lt;')
@@ -23,7 +23,7 @@ function appendCommentToDOM(container, comment, isPrepend) {
   }
 }
 function getCommentsAPI(siteKey, before, cb) {
-  let URL = `http://localhost/andrea/week12/api_comment.php?site_key=${siteKey}`
+  let URL = `http://mentor-program.co/mtr04group6/andrea/week12/board/api_comment.php?site_key=${siteKey}`
   if (before) {
     URL = URL + `&before=${before}`
   }
@@ -34,8 +34,6 @@ function getCommentsAPI(siteKey, before, cb) {
   });
 }
 
-
-const loadMoreBtnHTML = '<button name="load-more" type="button" class="btn btn-outline-info loading-btn mt-3">Load More..</button>'
 const siteKey = '123'
 let lastId = null
 let isEnd = false
@@ -44,11 +42,11 @@ const commentDOM = $('.comments')
 $(document).ready(() => {
   getComments()
 
-  $('.comments').on('click', '.loading-btn', () => {
+  $('.container').on('click', '.loading-btn', () => {
     getComments()
   })
 
-  $('.add-comment-form').submit(e => {
+  $('.add-comment-form').submit( e => {
     e.preventDefault();
     const newCommentData = {
       'site_key': siteKey,
@@ -57,7 +55,7 @@ $(document).ready(() => {
     }
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/andrea/week12/api_add_comment.php',
+      url: 'http://mentor-program.co/mtr04group6/andrea/week12/board/api_add_comment.php',
       data: newCommentData
     }).done(function (data) {
       if (!data.ok) {
@@ -73,26 +71,26 @@ $(document).ready(() => {
 
 function getComments() {
   const commentDOM = $('.comments')
-  $('.loading-btn').hide()
-  if (isEnd) {
-    return
-  }
+
   getCommentsAPI(siteKey, lastId, data => {
     if (!data.ok) {
       alert(data.message)
       return
     }
     const comments = data.discussions
-    for (let comment of comments) {
-      appendCommentToDOM(commentDOM, comment)
-    }
     let length = comments.length
-    if (length === 0) {
-      isEnd = true
-      $('.loading-btn').hide()
-    } else {
-      lastId = comments[length - 1].id
-      $('.comments').append(loadMoreBtnHTML)
+
+    for (let comment of comments) {
+
+      appendCommentToDOM(commentDOM, comment)
+
+      if (length < 5) {
+        $('.loading-btn').hide()
+        isEnd = true
+        return
+      } else {
+        lastId = comments[length - 1].id
+      }
     }
   })
 }

@@ -30,6 +30,7 @@
     <div class="comments">
 
     </div>
+    <button name="load-more" type="button" class=" btn btn-outline-info loading-btn mt-3">Load More..</button>
     
 
 
