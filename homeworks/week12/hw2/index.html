@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Week12 Todo List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h1 class="text-center">Todo List</h1>
+
+        <div class="input-group mb-3">
+          <input type="text" class="input_todo form-control">
+          <div class="input-group-append">
+            <button class="add_btn btn btn-outline-secondary" type="button">新增</button>
+          </div>
+        </div>
+
+        <div class="todos list-group">
+
+        </div>
+
+        <div class="info mt-1 d-flex justify-content-between align-items-center">
+          <div><span class="undo_count">0</span> 個未完成</div>
+          <div class="options d-flex">
+            <div class="select_all active">全部</div>
+            <div class="select_undo ml-2">未完成</div>
+            <div class="select_done ml-2">已完成</div>
+          </div>
+          <div class="clear_all">
+            移除已完成待辦事項
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
