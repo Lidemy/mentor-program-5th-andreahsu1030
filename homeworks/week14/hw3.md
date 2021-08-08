@@ -8,7 +8,7 @@ DNS (Domain Name System) 以提供網域名稱的方式來搜尋 IP 位置。
  1. 免費、方便 快速 安全
 
 ## 什麼是資料庫的 lock？為什麼我們需要 lock？
-為了防止 Race condition 
+為了防止 Race  
 
 
 ## NoSQL 跟 SQL 的差別在哪裡？
