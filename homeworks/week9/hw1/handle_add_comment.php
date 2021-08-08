@@ -20,7 +20,7 @@ if (empty($_POST['content'])) {
 // $nickname = $row['nickname'];
 
 $user = getUserFromUsername($_SESSION['username']);
-$nickname = $user['username'];
+$nickname = $user['nickname'];
 
 $content = $_POST['content'];
 
