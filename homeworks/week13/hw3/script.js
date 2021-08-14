@@ -59,7 +59,7 @@ function getGames(callback) {
       'Accept': ACCEPT_CODE
     })
   }).then(response => {
-    if(!response.ok){
+    if (!response.ok) {
       throw new Error(response.statusText)
     }
     response.json().then(data => {
@@ -71,7 +71,6 @@ function getGames(callback) {
   })
 }
 
-
 function getStreams(gameName, callback) {
   fetch(`${API_URL}/streams?game=${gameName}`, {
     headers: new Headers({
@@ -79,7 +78,7 @@ function getStreams(gameName, callback) {
       'Accept': ACCEPT_CODE
     })
   }).then(response => {
-    if(!response.ok){
+    if (!response.ok) {
       throw new Error(response.statusText)
     }
     response.json().then(data => {

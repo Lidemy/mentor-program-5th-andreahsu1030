@@ -1,7 +1,7 @@
 ## Webpack 是做什麼用的？可以不用它嗎？
 
-不一定要使用 webpack 只是有了webpack 比較方便 ！
 因為前端出現越來越多的Preprocess工具（css 預處理器, js babel...等等等 ）而出現了webpack 這個 module bunlder 將所有工具綁在一起執行。
+然後 不一定要使用 webpack 只是在大型專案中使用 webpack 較便利
 
 ## gulp 跟 webpack 有什麼不一樣？
 
