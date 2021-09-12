@@ -1,0 +1,12 @@
+@import '_variables';
+%a {
+  text-decoration: none;
+  color: $minor-color;
+}
+
+%btn {
+  border: solid 1px $minor-color;
+  color: $minor-color;
+  cursor: pointer;
+  display: inline-block;
+}

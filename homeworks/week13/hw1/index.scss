@@ -1,0 +1,219 @@
+@import '_components', '_mixin' , '_variables' ;
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  height: 80px;
+  &__site-name {
+    margin-right: 16px;
+    font-size: $font-size-title-strong;
+    font-weight: bold;
+    & a {
+      @extend %a;
+    }
+  }
+  &__list {
+
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include flex-center-justify(space-between);
+    & a {
+      @extend %a;
+    }
+    & > div {
+      display: flex;
+    }
+    & li {
+      margin-left: 21px;
+    }
+    
+  }
+  &__wrapper {
+    @include flex-center;
+    height: 100%;
+  }
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0px 12px;
+}
+
+.banner {
+  background-image: linear-gradient(to top, $black, $bg-color);
+  height: 240px;
+  color: $info-color;
+  @include flex-center-direction(column);
+  justify-content: center;
+  &__wrapper > div {
+    margin-top: 26px;
+  }
+  
+}
+
+.banner h1 {
+  font-size: $font-size-title-strong;
+  margin: 0;
+}
+
+.container-wrapper {
+  @include flex-center-direction(column);
+  min-height: calc(100vh - 350px);
+}
+
+.posts, .container {
+  background: white;
+  padding: 6px;
+  display: inline-flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.post {
+  padding: 30px;
+  border: solid 1px #9a9a9a;
+  & + .post {
+    margin-top: 24px;
+  }
+  &__header {
+    font-size: $font-size-header-big;
+    font-weight: bold;
+    @include flex-center-justify(space-between);
+  }
+  &__action {
+    @extend %btn, %a;
+    font-weight: normal;
+    padding: 3px 12px;
+    font-size: $font-size-label-small;
+  }
+  &__info {
+    margin-top: 19px;
+    padding: 12px 22px;
+    background: $info-color;
+    color: rgb(150, 150, 150);
+  }
+  &__content {
+    margin-top: 17px;
+    white-space: pre-line;
+    line-height: 1.5em;
+  }
+}
+
+
+.btn-read-more {
+  padding: 12px 16px;
+  margin-top: 36px;
+ @extend %a, %btn;
+}
+
+.login-wrapper {
+  @include flex-center-direction(column);
+  margin: 0 auto;
+  border: solid 1px $black;
+  width: 527px;
+  padding: 62px 72px;
+  margin-top: -30px;
+  background: white;
+  & form {
+    width: 100%;
+  }
+  & input {
+    width: 100%;
+  }
+}
+
+.input__field {
+  margin-top: 16px;
+  height: 40px;
+}
+
+.login-wrapper input[type=submit] {
+  height: 56px;
+  background-image: linear-gradient(to top, $black, #434343);
+  color: white;
+  margin-top: 73px;
+  & h2 {
+    font-size: $font-size-title-strong;
+    font-weight: normal;
+  }
+  & + .input__wrapper {
+    margin-top: 23px;
+  }
+}
+
+.input__label {
+  font-size: $font-size-label-small;
+  margin-left: 21px;
+}
+
+.edit-post {
+  padding: 30px;
+  border: solid 1px #9a9a9a;
+  &__title {
+    font-size: $font-size-header-big;
+  }
+  &__input-wrapper {
+    width: 100%;
+    margin-top: 28px;
+  }
+  &__input-wrapper input, .edit-post__input-wrapper textarea {
+    width: 100%;
+    padding: 6px;
+  }
+  &__btn-wrapper {
+    text-align: right;
+  }
+  &__btn {
+    @extend %btn;
+    padding: 10px 39px;
+    margin-top: 25px;
+  }
+}
+
+.admin-post {
+  @include flex-center-justify(space-between);
+  padding: 24px 0px;
+  border-bottom: 1px solid #9a9a9a;
+  font-size: $font-size-label-small;
+  margin: 0 auto;
+  &__title {
+    margin-left: 16px;
+  }
+  &__info {
+    @include flex-center;
+    margin-left: 12px;
+  }
+  &__created-at {
+    color: $minor-color;
+  }
+  &__btn {
+    @extend %a, %btn;
+    padding: 4px 8px;
+    margin-left: 8px;
+  }
+  &__btn:last-child {
+    margin-right: 16px;
+  }
+}
+
+.page_info {
+  text-align: center;
+}
+
+footer {
+  padding: 10px 0px;
+  background-color: $bg-color;
+  font-size: $font-size-label-small;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+/*# sourceMappingURL=s.css.map */

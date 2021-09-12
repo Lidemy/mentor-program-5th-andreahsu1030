@@ -20,6 +20,7 @@ module.exports = {
   },
 
   rules: {
-    'no-console': 'off'
+    'no-console': 'off',
+    'arrow-parens': 'off'
   }
 }
